@@ -1,0 +1,15 @@
+{
+  "name": "federico",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main_local.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://573b908789f5cfaaad0000b0@federico-externalserver.rhcloud.com/~/git/federico.git/"
+  },
+  "author": "",
+  "license": "ISC"
+}
