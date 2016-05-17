@@ -1,0 +1,69 @@
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Lato-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  src: url(../fonts/Lato-Italic.ttf);
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/Lato-Bold.ttf);
+}
+
+body {
+  font-family: 'Lato';
+  background: #f5f6f7;
+  color: #f5f6f7;
+  font-size: 20px;
+  line-height: 36px;
+  text-align: center;
+  font-weight: 300; 
+}
+  
+body, p {
+  font-family: 'Lato';
+  font-weight: 400;
+}
+/* =========================
+
+		SECTION STYLES 
+
+   =========================*/
+.step {
+	min-width: 100%;
+  position: relative;
+  min-height: 600px;
+}
+
+.gray-bg {
+  background-color: gray;
+}
+
+.red-bg {
+  background-color: rgb(255, 68, 68);
+}
+
+.orange-bg {
+  background-color: rgb(255, 187, 51);
+}
+
+.green-bg {
+  background-color: rgb(153, 204, 0);
+}
+
+.purple-bg {
+  background-color: rgb(170, 102, 204);
+}
+
+.blue-bg {
+  background-color: rgb(51, 181, 229);
+}
