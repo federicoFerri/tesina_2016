@@ -43,7 +43,6 @@ io.of('/console').on('connection', function(socket) {
     socket.on('slideId', function(data) {
     	slideId = data.data;
     	io.of('/client').emit('slideId', {'data': data.data});
-    	socket2m.emit('slideId', {'data': data.data});
     });
     
     socket.on('disconnect', function() {
