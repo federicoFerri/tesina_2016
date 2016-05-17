@@ -52,5 +52,4 @@ io.of('/console').on('connection', function(socket) {
     });
 });
 
-server.listen(8080, "0.0.0.0");
-
+server.listen(process.env.OPENSHIFT_NODEJS_PORT, process.env.OPENSHIFT_NODEJS_IP);
