@@ -60,6 +60,34 @@ h6 {
   background-color: rgb(51, 181, 229);
 }
 
+.gray {
+  color: gray;
+}
+
+.red {
+  color: rgb(255, 68, 68);
+}
+
+.orange {
+  color: rgb(255, 187, 51);
+}
+
+.green {
+  color: rgb(153, 204, 0);
+}
+
+.purple {
+  color: rgb(170, 102, 204);
+}
+
+.blue {
+  color: rgb(51, 181, 229);
+}
+
+.white {
+  color: #fff;
+}
+
 header {
     text-align: center;
     color: #fff;
@@ -103,7 +131,7 @@ header .intro-text .skills {
 }
 
 section {
-    padding: 100px 0;
+    padding: 80px 0;
 }
 
 section h2 {
@@ -111,27 +139,9 @@ section h2 {
     font-size: 3em;
 }
 
-section.success {
-    color: #fff;
-    background: #18bc9c;
-}
-
-section.success a,
-section.success a:hover,
-section.success a:focus,
-section.success a:active,
-section.success a.active {
-    outline: 0;
-    color: #2c3e50;
-}
-
 @media(max-width:767px) {
     section {
         padding: 75px 0;
-    }
-
-    section.first {
-        padding-top: 75px;
     }
 }
 
@@ -182,4 +192,36 @@ footer .footer-below {
 
 .scroll-top .btn:focus {
     outline: 0;
+}
+
+/*slide map*/
+.round-menu {
+	 width: 50px;
+  	 height: 50px;
+	 border-radius: 50%;
+	 box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+.embed-responsive
+{
+display: block;
+height: 0;
+overflow: hidden;
+position: relative;
+}
+
+.embed-responsive.embed-responsive-16by9
+{
+padding-bottom: 56.25%
+}
+
+.embed-responsive .embed-responsive-item, .embed-responsive iframe, .embed-responsive embed, .embed-responsive object
+{
+border: 0 none;
+bottom: 0;
+height: 100%;
+left: 0;
+position: absolute;
+top: 0;
+width: 100%;
 }

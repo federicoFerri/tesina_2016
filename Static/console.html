@@ -52,24 +52,24 @@
 </div>
 </div>
 
-<div id="step-why-care" send-id="step-why-care" class="step gray"
+<div id="step-alan" send-id="alan" class="step orange"
   data-x="600" data-y="0" data-z="0"
   data-rotate-z="-90">
-  <h1 class="center-text">Intro needed...</h1>
+  <p style="text-align:left;color:#fff;"><i>“Un computer meriterebbe di essere chiamato intelligente se potesse trarre in inganno un essere umano a credere che fosse umano”</i></p>
+  <p style="text-align:right;color:#fff;">Alan Turing, 1950</p>
 </div>
 
-<div id="step-physics" send-id="step-physics" class="step blue"
+<div id="step-demo1" send-id="demo1" class="step purple"
   data-x="1100" data-y="0" data-z="400"
   data-rotate-y="-50">
-  Blablablablabla
-  <h1>Car<h2>
+  <p style="text-align:left;color:#fff;"><i>“Dal momento in cui funziona nessuno la chiama più IA”</i></p>
+  <p style="text-align:right;color:#fff;">John McCarthy, 1956</p>
 </div>
 
-<div id="step-interp" send-id="step-interp" class="step red"
+<div id="step-nn" send-id="prodotti" class="step blue"
   data-x="1700" data-y="-200" data-z="800"
   data-rotate-y="-20" data-rotate-z="-20">
-  Lolololololololol
-  <h1>A</h1>
+  <h1>Reti neurali</h1>
 </div>
 
 <script src="js/socket.io.js"></script>
@@ -106,8 +106,8 @@ socket.on('remoteClientNum', function(data) {
    console.log("Remote: "+data.data);
 });
 
-$("#qrcode").qrcode({'render':"table",'text':'http://federico-externalserver.rhcloud.com/','width' : 400,'height' : 400});
-$("#qrcode_url").html('federico-externalserver.rhcloud.com');
+$("#qrcode").qrcode({'render':"table",'text':'http://tesina-externalserver.rhcloud.com/','width' : 400,'height' : 400});
+$("#qrcode_url").html('tesina-externalserver.rhcloud.com');
 </script>
 </body>
 </html>

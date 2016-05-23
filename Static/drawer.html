@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Drawer</title>
+<script type="text/javascript" src="js/neuralnet.js"></script> 
+<script type="text/javascript" src="js/drawer.js"></script> 
+<style>
+/* Some CSS styling */
+#sketchpadapp {
+    /* Prevent nearby text being highlighted when accidentally dragging mouse outside confines of the canvas */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.leftside {
+    float:left;
+    width:187px;
+    height:260px;
+    background-color:#def;
+    padding:10px;
+    border:2px solid #def;
+    border-radius:4px;
+    display: inline-block;
+}
+.rightside {
+    float:left;
+    margin-left:10px;
+    display: inline-block;
+}
+#can {
+    float:left;
+    height:280px;
+    width:280px;
+    border:2px solid #fff;
+    border-radius:4px;
+    position:relative; /* Necessary for correct mouse co-ords in Firefox */
+}
+.clearbutton {
+    font-size: 15px;
+    padding: 10px;
+    -webkit-appearance: none;
+    background: #eee;
+    border: 1px solid #888;
+}
+</style>
+</head>
+
+<body onload="init()">
+    <div id="sketchpadapp">
+    <table><tr>
+    	<td>
+        <div class="leftside">
+        		<b>Disegna un numero da 0 a 9 nell area a fianco</b>
+        		<div style="padding-bottom:5px;"><input type="checkbox" id="preprocessing"><span style="margin-left:5px;">Mostra immagine grezza</span></div>
+             <input type="submit" value="Reset" class="clearbutton" onclick="clearCanvas(canvas,ctx);">
+             <input type="submit" value="Riconosci" class="clearbutton" onclick="recognize(canvas,ctx);">
+             <table width="100%">
+             	<tr>
+             		<td width="50%"><div id="nnOut" style="font-size:80px;margin-left:auto;margin-right:auto;display:block;"></div></td>
+             		<td width="50%"><div id="verbose" style="float:left;font-size:12px;"></div></td>
+             	</tr>
+             </table>
+        </div>
+      </td><td>
+        <div class="rightside">
+            <canvas id="can" height="280" width="280">
+            </canvas>
+        </div>
+        <div id="nnInput"></div>
+      </td>
+    </tr></table>
+    </div>
+</body>
+</html>
