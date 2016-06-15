@@ -7,26 +7,27 @@
   <link rel="stylesheet" type="text/css" href="css/console-index.css">
   <link rel="stylesheet" type="text/css" href="css/console-steps.css">
 </head>
-<body>
+<body style="cursor:none;">
 <div id="impress">
 
-<div id="step-title" send-id="header" class="step orange" data-x="-1000" data-y="0" data-z="1000"
+<div id="step-qrcode" send-id="header" class="step orange" data-x="-1000" data-y="0" data-z="1000"
      data-rotate-x="180">
-  <h1 class="title">Intelligenza Artificiale</h1>
-  <p class="author">Tesina di Federico Ferri</p>
-  <p class="institution">
-    Liceo delle Scienze applicate<br>
-    I.T.C.S. Primo Levi - Bollate
-  </p>
+ 	<div style="width:100%;text-align:center;">
+  		<h1>Segui la presentazione da smartphone o tablet</h1>
+  	</div>
+  	<div id="qrcode" class="center-block" style="width:400px; height:400px;"></div>
+  	<p class="center-block" id="qrcode_url" style="width:800px; height:30px;text-align:center;"></p>
 </div>
 
-<div id="step-qrcode" send-id="header" class="step orange"
+<div id="step-title" send-id="header" class="step orange"
   data-x="0" data-y="-500" data-z="-1000">
-  <div style="width:100%;text-align:center;">
-  	<h1>Segui la presentazione da smartphone o tablet</h1>
-  	</div>
-  <div id="qrcode" class="center-block" style="width:400px; height:400px;"></div>
-  <p class="center-block" id="qrcode_url" style="width:800px; height:30px;text-align:center;"></p>
+  	<h1 class="title">Intelligenza Artificiale</h1>
+  	<h3 class="title">...e il suo lato umano</h3>
+  	<p class="author">Tesina di Federico Ferri</p>
+  	<p class="institution">
+    Liceo delle Scienze applicate<br>
+    I.T.C.S. Primo Levi - Bollate
+  	</p>
 </div>
 
 <div id="step-map" send-id="map" class="step orange"
@@ -37,7 +38,7 @@
       <div id='c1' class="gray-bg">Cos'è?</div>
     </li>
     <li>
-      <div id='c2' class="purple-bg">Dove?</div>
+      <div id='c2' class="purple-bg">Dov'è?</div>
     </li>
     <li>
       <div id='c3' class="blue-bg">N.N.</div>
@@ -66,10 +67,42 @@
   <p style="text-align:right;color:#fff;">John McCarthy, 1956</p>
 </div>
 
-<div id="step-nn" send-id="prodotti" class="step blue"
+<div id="step-nn" send-id="gallery" class="step blue center-text"
   data-x="1700" data-y="-200" data-z="800"
   data-rotate-y="-20" data-rotate-z="-20">
   <h1>Reti neurali</h1>
+  <img src="media/neural-network.png" class="center-block">
+</div>
+
+<div id="step-demo" send-id="openface" class="step red center-text"
+  data-x="2500" data-y="-100" data-z="800"
+  data-rotate-y="20" data-rotate-z="20">
+  <h1>Demo</h1>
+</div>
+
+<div id="step-hawking" send-id="warning" class="step green"
+  data-x="3200" data-y="-200" data-z="1000"
+  data-rotate-z="-20">
+  <p style="text-align:left;color:#fff;"><i>“Non possiamo sapere con certezza cosa succedrà se una macchina supera la nostra intelligenza, potrebbe aiutarci immensamente, ignorarci oppure probabilmente distruggerci”</i></p>
+  <p style="text-align:right;color:#fff;">Stephen Hawking, 2014</p>
+</div>
+
+<div id="step-end" class="step orange"
+  data-x="4000" data-y="0" data-z="0">
+  <h1>Grazie per l'attenzione</h1>
+</div>
+
+<div id="step-credits" send-id="credits" class="step orange"
+  data-x="5000" data-y="0" data-z="0">
+  <h1>Bibliografia</h1>
+  <ul class="credits">
+  	<li><b>Waitbutwhy AI</b></li>
+	<li><b>Stanford: What is AI</b></li>
+	<li><b>Wikiquite AI</b></li>
+	<li><b>Myselph OCR</b></li>
+	<li><b>Hexahedria NN Piano Music</b></li>
+	<li><b>DailyMail NN Art</b></li>
+  </ul>
 </div>
 
 <script src="js/socket.io.js"></script>
@@ -106,8 +139,8 @@ socket.on('remoteClientNum', function(data) {
    console.log("Remote: "+data.data);
 });
 
-$("#qrcode").qrcode({'render':"table",'text':'http://federico-externalserver.rhcloud.com/','width' : 400,'height' : 400});
-$("#qrcode_url").html('federico-externalserver.rhcloud.com');
+$("#qrcode").qrcode({'render':"table",'text':'http://tesina-externalserver.rhcloud.com/','width' : 400,'height' : 400});
+$("#qrcode_url").html('tesina-externalserver.rhcloud.com');
 </script>
 </body>
 </html>

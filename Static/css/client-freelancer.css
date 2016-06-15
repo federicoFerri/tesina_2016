@@ -225,3 +225,36 @@ position: absolute;
 top: 0;
 width: 100%;
 }
+
+/*slider*/
+.flex-caption {
+  width: 100%;
+  padding: 1em;
+  left: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+/*popup*/
+#closebt-container {
+	position: relative;
+	width:100%;
+	text-align:center;
+	margin-top:40px;
+}
+
+.closebt {
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+	cursor:pointer;
+}
+
+.closebt:hover {
+	transform:rotate(90deg);
+}

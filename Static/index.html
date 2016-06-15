@@ -10,18 +10,13 @@
   <script src="js/jquery-1.12.3.min.js"></script>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/client-freelancer.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/flexslider.css" type="text/css">
+  <link rel="stylesheet" href="css/animate.min.css">
   
    <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link href="css/montserrat.css" rel="stylesheet" type="text/css">
+    <link href="css/lato.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -32,6 +27,7 @@
 			<div class="col-lg-12">
 					<div class="intro-text">
 						<span class="name">Intelligenza Artificiale</span>
+						<span class="skills">...e il suo lato umano</span>
 					</div>
 					<img class="img-responsive" src="media/brain.png" alt="">
 					<div class="intro-text">
@@ -51,31 +47,31 @@
 				<hr class="star-light">
 			</div>
 			<div class="col-lg-6 text-center">
-			<table><tr>
+			<table onclick="scrollToAnchor('alan')"><tr>
 				<td><div class="round-menu gray-bg"></div></td>
 				<td><h3 class="white">Introduzione generale all'Intelligenza Artificiale(IA)</h3></td>
 			</tr></table>
 			</div>
 			<div class="col-lg-6 text-center">
-			<table><tr>
+			<table onclick="scrollToAnchor('demo1')"><tr>
 				<td><div class="round-menu purple-bg"></div></td>
 				<td><h3 class="white">L'IA nel mondo di tutti i giorni, dove posso trovarla?</h3></td>
 			</tr></table>
 			</div>
 			<div class="col-lg-6 text-center">
-			<table><tr>
+			<table onclick="scrollToAnchor('gallery')"><tr>
 				<td><div class="round-menu blue-bg"></div></td>
-				<td><h3 class="white">Breve introduzione alle reti neurali</h3></td>
+				<td><h3 class="white">Breve introduzione alle reti neurali e applicazioni</h3></td>
 			</tr></table>
 			</div>
 			<div class="col-lg-6 text-center">
-			<table><tr>
+			<table onclick="scrollToAnchor('openface')"><tr>
 				<td><div class="round-menu red-bg"></div></td>
 				<td><h3 class="white">Dimostrazione di una rete neurale applicata al riconoscimento facciale</h3></td>
 			</tr></table>
 			</div>
 			<div class="col-lg-6 text-center">
-			<table><tr>
+			<table onclick="scrollToAnchor('warning')"><tr>
 				<td><div class="round-menu green-bg"></div></td>
 				<td><h3 class="white">L'IA nel futuro, scelte e conseguenze</h3></td>
 			</tr></table>
@@ -143,18 +139,127 @@
 	</div>
 </section>
 
-<!-- Footer -->
-<footer class="text-center">
-	<div class="footer-above">
-		<div class="container">
-			<div class="row">
-				<div class="footer-col col-md-4">
-					<h3>Location</h3>
-					<p>3481 Melrose Place<br>Beverly Hills, CA 90210</p>
-				</div>       
+<!-- nn Section -->
+<section id="gallery" class="blue-bg">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2 class="white">Galleria</h2>
+				<hr class="star-light"></br>
+			</div>
+			<div class="col-lg-12">
+				<div class="flexslider">
+  					<ul class="slides">
+    					<li>
+      					<img src="media/neural-vangogh.jpg">
+        					<div class="flex-caption">Lo stile preso da "Notte Stellata" di Van Gogh applicato ad una foto, questo è possibile grazie a <a href="https://deepart.io/" target="_blank">DEEPART</a> una comoda webapp che implementa l'idea</div>
+    					</li>
+    					<li>
+    						<img src="media/neural-eiffel.gif">
+      					<div class="flex-caption">Trasformazione di un'immagine della Tour Eiffel in stile Post-impressionista, sempre utilizzando una rete neurale per modificare immagini</div>
+    					</li>
+    					<li>
+    						<a id="music" href="#animatedModal"><img src="media/neural-piano.png"></a>
+      					<div class="flex-caption">Una rete neurale che compone tracce musicali, l'idea è di Daniel Johnson su <a href="http://www.hexahedria.com/2015/08/03/composing-music-with-recurrent-neural-networks/" target="_blank">HEXEDRIA</a>. Clicca sulla foto per ascoltarle</div>
+    					</li>
+    					<li>
+      					<img src="media/neural-write.jpg">
+      					<div class="flex-caption">Il progetto canadese consiste in una rete neurale capace di di imparare e poi simulare la scrittura di chiunque, qui il loro sito <a href="http://www.cs.toronto.edu/~graves/handwriting.cgi" target="_blank">CS-TORONTO</a></div>
+    					</li>
+  					</ul>
+				</div>
+			</div>
+			<div class="col-lg-12">
+				
 			</div>
 		</div>
 	</div>
+</section>
+
+<!-- demo Section -->
+<section id="openface" class="red-bg">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2 class="white">Openface</h2>
+				<hr class="star-light"></br>
+			</div>
+			<div class="col-lg-4 text-center">
+				</br>
+				<img class="img-responsive" src="media/opencv.jpg" style="border-radius: 50%;width:60%;height:60%;margin-left:auto;margin-right:auto;" alt="">
+			</div>
+			<div class="col-lg-8">
+				<h4 class="white">
+				</br>
+				Openface è un progetto iniziato da Brandon Amos uno studente della Carnagie Mellon University a cui contribuiscono tuttora molti utenti in tutto il mondo.
+				Questo programma permette di individuare volti e identificarli, quindi un normale computer diventa capace di riconoscere una persona che ha già visto semplicemente
+				osservando la sua faccia proprio come noi umani. Programmi di questo genere esistevano già ma avevano bisogno di potenti computer per funzionare ed 
+				erano spesso riservati al solo utilizzo governativo. Openface è invece opensource cioè chiunque può proporre modifiche o cambiamenti ed utilizzarlo
+				liberamente sul proprio computer. Qui il sito del progetto per maggiori informazioni <a href="http://cmusatyalab.github.io/openface/" target="_blank">OPENFACE</a></h4>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- warning Section -->
+<section id="warning" class="green-bg">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2 class="white">The end?</h2>
+				<hr class="star-light"></br>
+			</div>
+			<div class="col-lg-4 text-center">
+				</br>
+				<img class="img-responsive" src="media/human-robot.png" style="border-radius: 50%;width:60%;height:60%;margin-left:auto;margin-right:auto;" alt="">
+			</div>
+			<div class="col-lg-8">
+				<h4 class="white">
+				</br>
+				Nel 2015 oltre 1000 scienziati ed esperti di intelligenza artificiale hanno firmato una lettera aperta contro lo sviluppo di sistemi autonomi nel campo 
+				militare, tra i firmatari ci sono anche Steve Wozniak cofondatore di Apple, Bill Gates fondatore di Microsoft, Demis Hassabis responsabile Deepmind per Google,
+				Elon Musk fondatore di Tesla e Stephen Hawking. Musk e Hawking hanno sottolineato che un'intelligenza artificiale militare fuori controllo è, ad oggi, 
+				la più concreta minaccia alla nostra esistenza chiedendo quindi maggiori regole sul loro sviluppo ed utilizzo.
+				</br>
+				</h4>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- end Section -->
+<section id="credits" class="orange-bg">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2 class="white">Bibliografia</h2>
+				<hr class="star-light"></br>				
+			</div>
+			<div class="col-lg-12 white">
+				<h4><ul>
+					<li><a href="http://waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html" target="_blank"><b>Waitbutwhy</b></a>
+					Sito fondato da Tim Urban e Andrew Finn specializzato nel giornalismo narrativo sotto forma di blog. Il sito è stato promosso 
+					dall “The Huffington Post” e perfino da Elon Musk.</li></br>
+					<li><a href="http://www-formal.stanford.edu/jmc/whatisai/node1.html" target="_blank"><b>WhatisAI</b></a> Sito tenuto da 
+					Stanford con domande e risposte sull’intelligenza artificiale di John McCarthy.</li></br>
+					<li><a href="https://en.wikiquote.org/wiki/Artificial_intelligence" target="_blank"><b>Wikiquite</b></a> Wikipedia 
+					delle citazioni, con riferimenti per ogni argomento a frasi celebri pronunciate da autorevoli personaggi.</li></br>
+					<li><a href="http://myselph.de/neuralNet.html" target="_blank"><b>Myselph</b></a> Sito personale di Hubert Eichner 
+					ingegnere software ed esperto di apprendimento automatico presso Google e Microsoft, tratta dei suoi lavori accademici.</li></br>
+					<li><a href="http://www.hexahedria.com/2015/08/03/composing-music-with-recurrent-neural-networks/" target="_blank"><b>
+					Hexahedria</b></a> Sito di Daniel Johnson studente presso il Harvey Mudd College appassionato di musica e ideatore del 
+					software che compone tracce per pianoforte.</li></br>
+					<li><a href="http://www.dailymail.co.uk/sciencetech/article-3214634/The-algorithm-learn-copy-artist-Neural-network-recreate-snaps-style-Van-Gogh-Picasso.html" target="_blank">
+					<b>DailyMail</b></a> Articolo di giornale del “Daily Mail” che tratta degli algoritmi di per la modifica di foto nei vari stili 
+					artistici.</li></br>
+				</ul></h4>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center">
 	<div class="footer-below">
 		<div class="container">
 			<div class="row">
@@ -172,9 +277,31 @@
 		<i class="fa fa fa-pause"></i>
 	</a>
 </div>
+
+<div id="animatedModal">
+	<div id="closebt-container" class="close-animatedModal"> 
+		<img class="closebt" src="media/closebt.svg">
+	</div>
+            
+	<div class="modal-container">
+		<div class="col-lg-12 text-center">
+			</br>
+			<h3 class="white">Queste tracce sono state generate da un computer e suonate da un simulatore di piano</h3>
+			</br>
+			<audio id="neural-track1" src="media/neural-track1.mp3" controls style="margin-left:auto;margin-right:auto;"></audio>
+			</br>
+			<audio id="neural-track3" src="media/neural-track3.mp3" controls style="margin-left:auto;margin-right:auto;"></audio>
+			</br>
+			<audio id="neural-track2" src="media/neural-track2.mp3" controls style="margin-left:auto;margin-right:auto;"></audio>
+			</br>
+		</div>
+	</div>
+</div>
 	
 <script src="js/bootstrap.min.js"></script>
 <script src="js/client-iframe.js"></script>
+<script src="js/jquery.flexslider-min.js"></script>
+<script src="js/animatedModal.min.js"></script>
 <script src="js/socket.io.js"></script>
 <script>
 var socket = io.connect('/client');
@@ -220,7 +347,21 @@ $('#link-again').click(function() {
 	}
 });
 
-//socket.emit('adduser', prompt("What's your name: "));
+$(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "slide"
+  });
+});
+
+$("#music").animatedModal({
+	color:'rgb(51, 181, 229)',//'#39BEB9'
+	beforeClose: function() {
+		//not working with jQuery
+		document.getElementById('neural-track1').pause();
+		document.getElementById('neural-track2').pause();
+		document.getElementById('neural-track3').pause();
+	}
+});
 </script>
 </body>
 </html>
