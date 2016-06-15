@@ -5,50 +5,52 @@ var io = require('socket.io')(server);
 
 app.use(express.static('Static'));
 
-var numClientsLocal = 0;
-var slideId = "";
-
-io.of('/client').on('connection', function(socket) {  
-    numClientsLocal++;
-    socket.on('adduser', function() {
-      console.log('Client connected');
+io.of('/client').on('connection', function(socket) {
+    socket.on('joinRoom', function(data) {
+    	var roomName = data.data;
+      socket.join(roomName);
       //provides slide number to incoming connections
-		socket.emit('slideId', {'data': slideId});
-		//update connected devices on console
-      io.of('/console').emit('localClientNum', {'data': numClientsLocal});
-    });
-
-    socket.on('disconnect', function() {
-        numClientsLocal--;
-        //update connected devices on console
-        io.of('/console').emit('clientNum', {'data': numClientsLocal});
-        console.log('Client disconnected');
+		socket.emit('slideId', {'data': slideIdArray[roomName]});   
     });
 });
 
-var alreadyConnected = false;
+var roomsArray = [];
+var slideIdArray = [];
+
+function makeid()
+{
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < 5; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+}
+
+function getRoomName() {
+	do{
+		var randomString = makeid();
+	}while(roomsArray.indexOf(randomString) > -1);
+	return randomString;
+}
 
 io.of('/console').on('connection', function(socket) {  
-    if (alreadyConnected) {
-    	socket.emit('blockLoad');
-		socket.disconnect(0);    
-    }else{
-    	socket.emit('allowLoad');
-    }
-    socket.on('adduser', function() {
-    	alreadyConnected = true;
-      console.log('Console connected');
-    });
-    
+	 var roomName = getRoomName();    
+    socket.join(roomName);
+    roomsArray.push(roomName);
+	 socket.emit('socketIp',{'data': roomName});    	
+    	
     socket.on('slideId', function(data) {
-    	slideId = data.data;
-    	io.of('/client').emit('slideId', {'data': data.data});
+    	slideIdArray[roomName] = data.data;
+    	io.of('/client').to(roomName).emit('slideId', {'data': data.data});
     });
     
     socket.on('disconnect', function() {
-        alreadyConnected = false;
-        console.log('Console disconnected');
+        roomsArray.splice(roomsArray.indexOf(roomName), 1);
     });
 });
 
-server.listen(process.env.OPENSHIFT_NODEJS_PORT, process.env.OPENSHIFT_NODEJS_IP);
+server.listen(8080);
+
+//server.listen(process.env.OPENSHIFT_NODEJS_PORT, process.env.OPENSHIFT_NODEJS_IP);

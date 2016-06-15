@@ -109,21 +109,9 @@
 <script src="js/jquery.qrcode.min.js"></script>
 <script src="js/impress.js"></script>
 <script>
+impress().init();
+
 var socket = io.connect('/console');
-socket.on('connect', function(){
-    socket.emit('adduser');
-});
-
-var htmlBlockPage = "<div id=\"step-title\" class=\"step orange\" data-x=\"-1000\" data-y=\"0\" data-z=\"1000\"><h1>Platform already in use</h1><p class=\"author\">Wait your turn :)</p></div>";
-
-socket.on('blockLoad', function () {
-	$('#impress').html(htmlBlockPage);
-	impress().init();
-});
-
-socket.on('allowLoad', function () {
-	impress().init();
-});
 
 $(document).on('impress:stepactivate', function (event) {
   var sendId = $('#'+$(event.target).context.id).attr('send-id');
@@ -131,16 +119,11 @@ $(document).on('impress:stepactivate', function (event) {
   socket.emit('slideId',{'data': sendId});
 });
 
-socket.on('localClientNum', function(data) {
-   console.log("Local: "+data.data);
+socket.on('socketIp', function(data) {
+   $("#qrcode").qrcode({'render':"table",'text':"http://federico-externalserver.rhcloud.com?r="+data.data,'width' : 400,'height' : 400});
+	$("#qrcode_url").html("federico-externalserver.rhcloud.com?r="+data.data);
+	console.log(data.data);
 });
-
-socket.on('remoteClientNum', function(data) {
-   console.log("Remote: "+data.data);
-});
-
-$("#qrcode").qrcode({'render':"table",'text':'http://tesina-externalserver.rhcloud.com/','width' : 400,'height' : 400});
-$("#qrcode_url").html('tesina-externalserver.rhcloud.com');
 </script>
 </body>
 </html>
