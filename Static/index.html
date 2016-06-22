@@ -309,7 +309,7 @@ var socket = io.connect('/client');
 var slideId = "header";
 var scrollLock = false;
 socket.on('connect', function(){
-   socket.emit('adduser');
+   socket.emit('joinRoom', {'data':getQuery("r")});
 });
 
 socket.on('notification', function (data) {
@@ -325,6 +325,11 @@ function scrollToAnchor(target){
     // Animation complete.
   	 }
   	});
+}
+
+function getQuery(name){
+   if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
+      	return decodeURIComponent(name[1]);
 }
 
 socket.on('slideId', function(data) {
