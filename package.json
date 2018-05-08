@@ -1,5 +1,5 @@
 {
-  "name": "federico",
+  "name": "tesina_2016",
   "version": "1.0.0",
   "description": "",
   "main": "main_local.js",
@@ -11,6 +11,5 @@
     "type": "git",
     "url": "https://github.com/federicoFerri/tesina_2016.git"
   },
-  "author": "",
-  "license": "ISC"
+  "license": "MIT"
 }
