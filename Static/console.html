@@ -122,8 +122,8 @@ $(document).on('impress:stepactivate', function (event) {
 });
 
 socket.on('socketIp', function(data) {
-   $("#qrcode").qrcode({'render':"table",'text':"http://http://tesina2016-tesina2016.a3c1.starter-us-west-1.openshiftapps.com?r="+data.data,'width' : 400,'height' : 400});
-	$("#qrcode_url").html("http://tesina2016-tesina2016.a3c1.starter-us-west-1.openshiftapps.com?r="+data.data);
+   $("#qrcode").qrcode({'render':"table",'text':"https://powerful-inlet-89623.herokuapp.com?r="+data.data,'width' : 400,'height' : 400});
+	$("#qrcode_url").html("https://powerful-inlet-89623.herokuapp.com?r="+data.data);
 	console.log(data.data);
 });
 </script>
